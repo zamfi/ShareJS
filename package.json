@@ -11,6 +11,7 @@
     "sharejs-exampleserver": "bin/exampleserver"
   },
   "dependencies": {
+    "sockjs": ">= 0.3.1",
     "socket.io": "~0.8",
     "socket.io-client": "~0.8",
     "connect": "~1",
@@ -22,12 +23,14 @@
     "hat": "*"
   },
   "devDependencies": {
-    "nodeunit": "*"
+    "nodeunit": "*",
+    "websocket": "*"
   },
   "engine": "node >= 0.6",
   "scripts": {
     "build": "cake build",
-    "test": "nodeunit tests.coffee"
+    "test": "nodeunit tests.coffee",
+    "prepublish": "cake webclient"
   },
   "licenses": [{
     "type": "BSD",
